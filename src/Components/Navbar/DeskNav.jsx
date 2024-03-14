@@ -79,7 +79,7 @@ const DeskNav = () => {
                     <li className='cursor-pointer'>MICROSOFT</li>
                     {
                         menuItem && menuItem.map((nav, index) =>
-                            <li className="nav-item cursor-pointer">{nav.nav}</li>
+                            <li key={index} className="nav-item cursor-pointer">{nav.nav}</li>
                         )
                     }
                 </ul>
