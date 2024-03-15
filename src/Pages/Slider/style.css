@@ -1,0 +1,72 @@
+/*
+  All of the CSS below is strictly for the demo.  none of the components rely on this for actual
+  functionality.
+*/
+
+/* Variables */
+:root {
+  --dark: #373737;
+  --light: #f4f4f4;
+  --white: #fefefe;
+  --highlight1: #c0b283;
+  --highlight2: #dcd0c0;
+  --font-size--large-headline--mobile: 4rem;
+  --font-size--large-headline--desktop: 4.8rem;
+  --font-size--large-text--mobile: 1.6rem;
+  --font-size--large-text--desktop: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px dashed var(--highlight1);
+  background: var(--highlight2);
+  margin: 2rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5em;
+}
+
+
+
+.responsiveImg {
+  max-width: 100%;
+}
+
+.slide-text {
+  position: absolute;
+  left: 90px; /* Adjust left positioning as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  color: white; /* Adjust text color as needed */
+}
+
+
+
+
+.slider {
+  max-width: 100%;
+}
+
