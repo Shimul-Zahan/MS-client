@@ -8,7 +8,7 @@ const Nav = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div>
+        <div className='relative z-50 h-screen lg:h-0'>
             <nav className='flex justify-between items-center lg:hidden md:px-10'>
                 <div className='w-full z-50 md:w-auto px-4 py-5 flex justify-between items-center'>
                     <h1 className='text-xl font-bold'>LOGO</h1>

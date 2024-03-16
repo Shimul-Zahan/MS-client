@@ -31,14 +31,6 @@ const Home = () => {
                         <Card path={''} image={"https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-For-Security?wid=380&hei=213&fit=crop"} />
                     </div>
                 </div>
-                <div className='px-10 py-10'>
-                    <h1 className='text-4xl font-bold mb-7'>Explore more about AI and Copilot</h1>
-                    <div className='grid grid-cols-1 lg:grid-cols-3 justify-center items-center gap-8 w-full'>
-                        <Card size={'large'} path={''} image={"https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-AI-Ten-Terms?wid=517&hei=291&fit=crop"} />
-                        <Card size={'large'} path={''} image={"https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Innovative-Uses-Purple?wid=517&hei=291&fit=crop"} />
-                        <Card size={'large'} path={''} image={"https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-dAI-in-the-Life-Liam?wid=517&hei=291&fit=crop"} />
-                    </div>
-                </div>
             </div>
             <Footer />
         </>

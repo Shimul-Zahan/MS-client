@@ -15,7 +15,7 @@ import {
   MdOutlinePauseCircle,
   MdOutlinePlayCircleOutline,
 } from "react-icons/md";
-import "./style.css"; 
+import "./style.css";
 import { useEffect, useState } from "react";
 import { GoDot, GoDotFill } from "react-icons/go";
 import { Link } from "react-router-dom";

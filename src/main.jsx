@@ -7,18 +7,34 @@ import {
 } from 'react-router-dom'
 import MainLayout from './Layout/MainLayout.jsx'
 import Home from './Pages/Home/Home.jsx'
+import Error from './Utils/Error.jsx'
+import Extra from './Utils/Extra.jsx'
+import Login from './Components/AuthForm/Login.jsx'
+import Registration from './Components/AuthForm/Registration.jsx'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
-    errorElement: <h1>Error page bro</h1>,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
         element: <Home />
-      }
+      },
+      {
+        path: '/extra/:pageName',
+        element: <Extra />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/registration',
+        element: <Registration />
+      },
     ]
   }
 ])

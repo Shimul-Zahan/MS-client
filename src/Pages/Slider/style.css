@@ -57,10 +57,12 @@ p {
 
 .slide-text {
   position: absolute;
-  left: 90px; /* Adjust left positioning as needed */
+  left: 90px;
+  /* Adjust left positioning as needed */
   top: 50%;
   transform: translateY(-50%);
-  color: white; /* Adjust text color as needed */
+  color: white;
+  /* Adjust text color as needed */
 }
 
 
@@ -69,4 +71,3 @@ p {
 .slider {
   max-width: 100%;
 }
-

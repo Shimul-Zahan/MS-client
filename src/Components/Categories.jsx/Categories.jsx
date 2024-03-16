@@ -71,15 +71,15 @@ const Categories = () => {
 
         <div className='pt-10 pb-20'>
 
-            <div className='flex flex-col lg:flex-row justify-center items-center gap-10'>
+            <div className='flex flex-col lg:flex-row text-xl justify-center items-center gap-10'>
 
                 {
 
                     menus.map((menu, idx) =>
 
-                        <Link key={idx} to={menu.path} className='flex justify-center items-center flex-col gap-2'>
+                        <Link key={idx} to={`/extra/${menu.title}`} className='flex justify-center items-center flex-col gap-2'>
 
-                            <img src={menu.image} alt="cat-image" className='h-10 w-10' />
+                            <img src={menu.image} alt="cat-image" className='h-20 w-20' />
 
                             <h1 className='font-bold underline text-blue-700'>{menu.title}</h1>
 
