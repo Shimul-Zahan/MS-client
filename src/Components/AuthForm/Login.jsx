@@ -1,19 +1,46 @@
+import axios from 'axios';
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
-    return (
 
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        const info = {
+            email, password,
+        }
+
+        console.log(info);
+
+        const res = await axios.post('http://localhost:8000/login', info);
+        console.log(res.data?.login);
+        if (!res.data?.login) {
+            window.alert('Please register before login');
+        } else {
+            window.alert('Successfully login');
+            localStorage.setItem('userInfo', JSON.stringify(res?.data));
+            navigate('/');
+        }
+
+    };
+
+    return (
         <div className='w-full min-h-screen flex justify-center items-center'>
             <div className="max-w-[800px] mx-auto my-12 p-6 bg-white shadow-md sm:px-8 sm:py-10 lg:px-12 lg:py-16">
                 <div className="flex flex-col sm:flex-row justify-between space-x-0 sm:space-x-12">
                     <div className="w-full sm:w-1/2 mb-8 sm:mb-0">
                         {/* Left side form */}
                         <h2 className="text-2xl font-bold mb-6">Login</h2>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="flex flex-col space-y-4 mb-4">
-                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Username" type="text" />
-                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Password" type="password" />
+                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Email" type="email" name='email' />
+                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Password" type="password" name='password' />
                             </div>
                             <div className="flex items-center space-x-2 mb-6">
                                 <button type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on" className="peer h-4 w-4 shrink-0 rounded-sm border  " />
@@ -21,7 +48,7 @@ const Login = () => {
                                     Keep me signed in
                                 </label>
                             </div>
-                            <button className="inline-flex items-center justify-center rounded-md text-sm font-medium  h-10 px-4 py-2 w-full bg-red-600 text-white">
+                            <button type='submit' className="inline-flex items-center justify-center rounded-md text-sm font-medium  h-10 px-4 py-2 w-full bg-red-600 text-white">
                                 LOG IN
                             </button>
                         </form>

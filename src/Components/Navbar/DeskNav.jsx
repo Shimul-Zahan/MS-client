@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaAngleDown } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
+import logo from '../../assets/WhatsApp Image 2024-03-15 at 02.20.45.jpeg'
 
 const DeskNav = () => {
 
@@ -11,7 +12,7 @@ const DeskNav = () => {
 
     const menuItem = [
         {
-            nav: 'Microsoft 365',
+            nav: 'Clienteer Hub',
             link: '/',
             submenu: true,
             submenuItem: [
@@ -23,11 +24,11 @@ const DeskNav = () => {
             ]
         },
         {
-            nav: 'Copilot',
+            nav: 'PulseFlow',
             link: '/about'
         },
         {
-            nav: 'Windows',
+            nav: 'SalesSpark',
             link: '/contact',
             submenu: true,
             submenuItem: [
@@ -39,28 +40,12 @@ const DeskNav = () => {
             ]
         },
         {
-            nav: 'Surface',
+            nav: 'FinanceForte',
             link: '/login',
         },
         {
-            nav: 'Xbox',
+            nav: 'TaskTorch',
             link: '/registration',
-            submenu: true,
-            submenuItem: [
-                { name: 'Apple', link: '/apple' },
-                { name: 'Komla', link: '/apple' },
-                { name: 'Kola', link: '/apple' },
-                { name: 'Pineapple', link: '/apple' },
-                { name: 'Guava', link: '/apple' }
-            ]
-        },
-        {
-            nav: 'Deals',
-            link: '/about'
-        },
-        {
-            nav: 'Small Business',
-            link: '/contact',
             submenu: true,
             submenuItem: [
                 { name: 'Apple', link: '/apple' },
@@ -73,14 +58,14 @@ const DeskNav = () => {
         {
             nav: 'Support',
             link: '/login',
-        }
+        },
     ]
 
     return (
         <nav className='hidden lg:block px-20 py-10'>
             <div className='flex justify-between items-center text-xl pb-8'>
                 <ul className='flex justify-between items-center gap-8'>
-                    <li className='cursor-pointer'>MICROSOFT</li>
+                    <img src={logo} alt="" className='h-16 w-40' />
                     {
                         menuItem && menuItem.map((nav, index) =>
                             <Link key={index} to={`/extra/${nav.nav}`} className="nav-item cursor-pointer">{nav.nav}</Link>

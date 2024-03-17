@@ -1,7 +1,42 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Registration = () => {
+
+    const [selectedImage, setSelectedImage] = useState(null);
+    const navigate = useNavigate();
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        setSelectedImage(file);
+    };
+
+    const handleRegistration = async e => {
+        e.preventDefault();
+        const form = e.target;
+        const user = {
+            name: form.name.value,
+            password: form.password.value,
+            email: form.email.value,
+            image: selectedImage,
+        }
+        console.log(user);
+        const res = await axios.post('http://localhost:8000/resgistration', user, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        })
+
+        if (res.data.message === 'Eamil alreay uses. Try again with new email') {
+            window.alert('Eamil alreay uses. Try again with new email');
+        } else {
+            window.alert('Successfully created user');
+            navigate('/otps')
+        }
+
+    }
+
     return (
         <div className='w-full min-h-screen flex justify-center items-center'>
             <div className="max-w-[800px] mx-auto my-12 p-6 bg-white shadow-md sm:px-8 sm:py-10 lg:px-12 lg:py-16">
@@ -9,16 +44,16 @@ const Registration = () => {
                     <div className="w-full sm:w-1/2 mb-8 sm:mb-0">
                         {/* Left side form */}
                         <h2 className="text-2xl font-bold mb-6">Login</h2>
-                        <form>
+                        <form onSubmit={handleRegistration}>
                             <div className="flex flex-col space-y-4 mb-4">
-                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Username" type="text" />
-                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Password" type="password" />
+                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Username" type="text" name='name' />
+                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Password" type="password" name='password' />
                             </div>
                             <div className="flex flex-col space-y-4 mb-4">
-                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Email" type="emial" />
-                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Image" type="file" />
+                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Email" type="emial" name='email' />
+                                <input className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:outline-none" placeholder="Image" type="file" name="image" onChange={handleImageChange} />
                             </div>
-                            <button className="inline-flex items-center justify-center rounded-md text-sm font-medium  h-10 px-4 py-2 w-full bg-red-600 text-white">
+                            <button type='submit' className="inline-flex items-center justify-center rounded-md text-sm font-medium  h-10 px-4 py-2 w-full bg-red-600 text-white">
                                 LOG IN
                             </button>
                         </form>

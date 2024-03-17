@@ -11,6 +11,7 @@ import Error from './Utils/Error.jsx'
 import Extra from './Utils/Extra.jsx'
 import Login from './Components/AuthForm/Login.jsx'
 import Registration from './Components/AuthForm/Registration.jsx'
+import OTPs from './Components/AuthForm/OTPs.jsx'
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/otps',
+        element: <OTPs />
       },
       {
         path: '/registration',
