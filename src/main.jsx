@@ -12,6 +12,7 @@ import Extra from './Utils/Extra.jsx'
 import Login from './Components/AuthForm/Login.jsx'
 import Registration from './Components/AuthForm/Registration.jsx'
 import OTPs from './Components/AuthForm/OTPs.jsx'
+import Sidebard from './Components/Dashboard/Sidebard.jsx'
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,16 @@ const router = createBrowserRouter([
         path: '/registration',
         element: <Registration />
       },
+    ]
+  },
+  {
+    path: '/dashboard',
+    element: <Sidebard />,
+    children: [
+      {
+        path: '/dashboard',
+        element: <h1>Hello Dashboard</h1>
+      }
     ]
   }
 ])
