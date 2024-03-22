@@ -1,14 +1,33 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './deskNav.css'
 import { Link } from 'react-router-dom';
 import { FaAngleDown } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
 import logo from '../../assets/WhatsApp Image 2024-03-15 at 02.20.45.jpeg'
+import { MyContext } from '../../Auth/AuthProvide';
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
 
 const DeskNav = () => {
 
     const [toggle, setToggle] = useState(false);
+    const { user, logOut } = useContext(MyContext);
+
+    const logOutUser = () => {
+        logOut().then(res => {
+            localStorage.removeItem('ms_userInfo');
+            toast.warning('Successfully Logout', {
+                position: "top-right",
+                autoClose: 5000,
+                theme: "light",
+            })
+        }).catch(err => console.log(err))
+    }
+
+    const userManual = localStorage.getItem("ms_userInfo");
+    const loginUser = JSON.parse(userManual);
+
 
     const menuItem = [
         {
@@ -24,11 +43,11 @@ const DeskNav = () => {
             ]
         },
         {
-            nav: 'PulseFlow',
+            nav: 'Pulse Flow',
             link: '/about'
         },
         {
-            nav: 'SalesSpark',
+            nav: 'Sales Spark',
             link: '/contact',
             submenu: true,
             submenuItem: [
@@ -40,11 +59,11 @@ const DeskNav = () => {
             ]
         },
         {
-            nav: 'FinanceForte',
+            nav: 'Finance Forte',
             link: '/login',
         },
         {
-            nav: 'TaskTorch',
+            nav: 'Task Torch',
             link: '/registration',
             submenu: true,
             submenuItem: [
@@ -61,8 +80,26 @@ const DeskNav = () => {
         },
     ]
 
+    // for darkmode here
+    const [darkMode, setDarkMode] = useState(() => {
+        const storedPreference = localStorage.getItem('darkMode');
+        return storedPreference ? JSON.parse(storedPreference) : false;
+    });
+
+    useEffect(() => {
+        const htmlElement = document.documentElement;
+        if (darkMode) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+        localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    }, [darkMode]);
+
+    console.log(darkMode);
+
     return (
-        <nav className='hidden lg:block px-20 py-10'>
+        <nav className='hidden lg:block px-20 py-10 dark:text-white'>
             <div className='flex justify-between items-center text-xl pb-8'>
                 <ul className='flex justify-between items-center gap-8'>
                     <img src={logo} alt="" className='h-16 w-40' />
@@ -73,6 +110,17 @@ const DeskNav = () => {
                     }
                 </ul>
                 <ul className='flex justify-between items-center gap-8'>
+                    <button
+                        className="text-3xl text-black dark:text-white px-4 py-2 rounded"
+                        onClick={() => setDarkMode(!darkMode)}
+                    >
+                        {darkMode ? <CiLight /> : <MdDarkMode />}
+                    </button>
+                    {
+                        (user || loginUser) && <div className='flex cursor-pointer justify-center items-center gap-3'>
+                            <Link to='/dashboard' className='cursor-pointer nav-item'>Dashboard</Link>
+                        </div>
+                    }
                     <div onClick={() => setToggle(!toggle)} className='flex cursor-pointer justify-center items-center gap-3'>
                         <li className='cursor-pointer nav-item'>All Microsoft</li>
                         <FaAngleDown />
@@ -81,10 +129,17 @@ const DeskNav = () => {
                         <Link to={`/extra/${'Search'}`} className='cursor-pointer nav-item'>Search</Link>
                         <IoSearchOutline className='text-2xl' />
                     </div>
-                    <div className='flex justify-center items-center gap-3'>
-                        <Link to="/registration" className='cursor-pointer nav-item'>Sign in</Link>
-                        <VscAccount className='text-3xl ' />
-                    </div>
+                    {
+                        (user || loginUser) ? <div onClick={logOutUser} className='flex justify-center items-center gap-3'>
+                            <Link to="/registration" className='cursor-pointer nav-item'>Logout</Link>
+                            {/* <VscAccount className='text-3xl ' /> */}
+                            <img src={user?.reloadUserInfo?.photoUrl || `http://localhost:8000/image/${loginUser?.image}`} alt="" className='h-12 w-12 rounded-full' />
+                        </div> : <div className='flex justify-center items-center gap-3'>
+                            <Link to="/registration" className='cursor-pointer nav-item'>Sign in</Link>
+                            <VscAccount className='text-3xl ' />
+                        </div>
+
+                    }
                 </ul>
             </div>
             <div className={`${toggle ? 'absolute top-32 w-[75%] right-16 duration-300 z-50' : 'hidden'}`}>

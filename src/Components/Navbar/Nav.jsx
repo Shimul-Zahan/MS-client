@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import Navlinks from './Navlinks';
@@ -6,6 +6,7 @@ import Navlinks from './Navlinks';
 const Nav = () => {
 
     const [open, setOpen] = useState(false);
+
 
     return (
         <div className='relative z-50 h-screen lg:h-0'>

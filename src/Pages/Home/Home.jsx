@@ -10,7 +10,7 @@ import Categories from '../../Components/Categories.jsx/Categories'
 const Home = () => {
     return (
         <>
-            <div className='min-h-screen'>
+            <div className='min-h-screen dark:bg-gray-700'>
                 <Nav />
                 <DeskNav />
                 <Slider />

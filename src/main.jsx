@@ -13,6 +13,9 @@ import Login from './Components/AuthForm/Login.jsx'
 import Registration from './Components/AuthForm/Registration.jsx'
 import OTPs from './Components/AuthForm/OTPs.jsx'
 import Sidebard from './Components/Dashboard/Sidebard.jsx'
+import AuthProvider from './Auth/AuthProvide.jsx'
+import SamplePage from './Components/Dashboard/SamplePage.jsx'
+import Support from './Pages/Home/Support.jsx'
 
 
 const router = createBrowserRouter([
@@ -41,6 +44,10 @@ const router = createBrowserRouter([
         path: '/registration',
         element: <Registration />
       },
+      {
+        path: '/support',
+        element: <Support />
+      },
     ]
   },
   {
@@ -49,14 +56,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard',
-        element: <h1>Hello Dashboard</h1>
-      }
+        element: <SamplePage />
+      },
+      {
+        path: '/dashboard/route',
+        element: <SamplePage />
+      },
+
     ]
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
