@@ -56,11 +56,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard',
-        element: <Dashboard/>
+        element: <Dashboard />
       },
       {
         path: '/dashboard/route',
-        element: <Dashboard/>
+        element: <Dashboard />
       },
 
     ]
