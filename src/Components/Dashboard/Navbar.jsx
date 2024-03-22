@@ -5,7 +5,8 @@ import { VscAccount } from 'react-icons/vsc';
 import { toast } from 'react-toastify';
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaChevronCircleRight } from "react-icons/fa";
-
+import { IoSettings } from "react-icons/io5";
+import { MdOutlineDarkMode } from "react-icons/md";
 const Navbar = () => {
 
     // setIsSidebarOpen,
@@ -29,7 +30,7 @@ const Navbar = () => {
     const userPhotoUrl = user?.reloadUserInfo?.photoUrl || `http://localhost:8000/image/${loginUser?.image}`;
 
     return (
-        <nav className="bg-[#21295c] p-4 flex justify-between items-center pr-10">
+        <nav className="bg-[#21295c] p-7 flex justify-between items-center pr-10">
             {/* Left side */}
             <div className="flex items-center gap-5">
                 {
@@ -40,7 +41,7 @@ const Navbar = () => {
                     {/* Search bar */}
                     <input
                         type="text"
-                        className="bg-gray-700 lg:min-w-[300px] text-white px-4 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                        className="bg-[#292d4d] lg:min-w-[300px] text-white px-4 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300"
                         placeholder="Search..."
                     />
                     <div className='absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer'>
@@ -55,16 +56,18 @@ const Navbar = () => {
             {/* Right side */}
             <div className="flex items-center justify-end gap-5">
                 {/* Notification icon */}
-                <button className="text-white mr-4 focus:outline-none">
-                    <svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m13.58 11.6-1.33-2.18V6.33A4.36 4.36 0 0 0 10 2.26a2.45 2.45 0 0 0 0-.38A1.94 1.94 0 0 0 8 0a1.94 1.94 0 0 0-2 1.88 1.64 1.64 0 0 0 0 .38 4.36 4.36 0 0 0-2.25 4.07v3.09L2.42 11.6a1.25 1.25 0 0 0 1.06 1.9h1.77A2.68 2.68 0 0 0 8 16a2.68 2.68 0 0 0 2.75-2.5h1.77a1.25 1.25 0 0 0 1.06-1.9zM7.25 1.88A.7.7 0 0 1 8 1.25a.7.7 0 0 1 .75.63 6 6 0 0 0-.75 0 5.9 5.9 0 0 0-.75 0zM8 14.75a1.44 1.44 0 0 1-1.5-1.25h3A1.44 1.44 0 0 1 8 14.75zm-4.52-2.5 1.34-2.17.18-.31V6.33a4 4 0 0 1 .6-2.12A2.68 2.68 0 0 1 8 3.12a2.68 2.68 0 0 1 2.4 1.09 4 4 0 0 1 .6 2.12v3.44l.18.31 1.34 2.17z" /></svg>
+                <button className="text-[#b9a683] mr-4 focus:outline-none">
+                <MdOutlineDarkMode className='text-3xl text-[#ddd5c7]'/>
+
                 </button>
+                <IoSettings className='text-3xl text-[#ddd5c7]'/>
 
                 {
                     (user || loginUser) ? <div onClick={logOutUser} className='flex justify-center items-center gap-3'>
-                        <Link to="/registration" className='cursor-pointer nav-item text-white hover:underline'>Logout</Link>
+                        <Link to="/registration" className='cursor-pointer nav-item text-[#b9a683] hover:underline'>Logout</Link>
                         {/* <VscAccount className='text-3xl ' /> */}
                         <img src={userPhotoUrl} alt="" className='h-12 w-12 rounded-full' />
-                    </div> : <div className='flex justify-center items-center gap-3'>
+                    </div> : <div className='flex justify-center items-center gap-3 text-[#ddd5c7]'>
                         <Link to="/registration" className='cursor-pointer nav-item'>Sign in</Link>
                         <VscAccount className='text-3xl ' />
                     </div>
