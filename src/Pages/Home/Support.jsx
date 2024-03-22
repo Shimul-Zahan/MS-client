@@ -15,22 +15,34 @@ const Support = () => {
     //     formState: { errors },
     // } = useForm()
     const sendEmail = (e) => {
-        e.preventDefault();
-        // console.log(data);
+        e.preventDefault()
+        const name = e.target.user_name.value;
+        const email = e.target.user_email.value;
+        const message = e.target.message.value;
+        console.log(name, email, message);
 
-        emailjs.sendForm('service_7ay2tdk', 'template_z5dxop8', form.current, '8R2AlonC3RdZ-e1uD')
-            .then((result) => {
-                e.target.reset();
-            }, (error) => {
-                console.log(error.text);
-            });
+        if (name && email && message) {
+            e.preventDefault();
+            // console.log(data);
+
+            emailjs.sendForm('service_7ay2tdk', 'template_z5dxop8', form.current, '8R2AlonC3RdZ-e1uD')
+                .then((result) => {
+                    window.alert("Message sent successfully");
+                    e.target.reset();
+                }, (error) => {
+                    console.log(error.text);
+                });
+        } else {
+            window.alert("Please fill all field")
+        }
+
     }
 
 
     return (
         <div>
             <div
-                className="hero min-h-80"      
+                className="hero min-h-80"
             >
                 <SupportNav />
                 <div className="pt-24 pb-14 z-10">
@@ -120,11 +132,12 @@ const Support = () => {
 
 
             <div className="bg-blue-500 my-20 mt-28 py-[60px] px-4"
-            style={{
-              background: `url(${background})`,
-              backgroundColor: "#f9f9f9",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover"}}
+                style={{
+                    background: `url(${background})`,
+                    backgroundColor: "#f9f9f9",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover"
+                }}
             >
                 <h1 className="uppercase text-center text-white font-bold text-4xl">DisCover our Award-winning Blog</h1>
                 <p className="text-white text-center mt-2">Written by customer & employee experience experts who live & breathe experience engagement every day.</p>
