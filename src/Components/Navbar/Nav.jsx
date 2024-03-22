@@ -5,6 +5,7 @@ import Navlinks from './Navlinks';
 import { MyContext } from '../../Auth/AuthProvide';
 import { Link } from 'react-router-dom';
 import { VscAccount } from 'react-icons/vsc';
+import logo from '../../assets/WhatsApp_Image_2024-03-15_at_02.20.45_1_-removebg-preview.png'
 
 const Nav = () => {
 
@@ -28,10 +29,10 @@ const Nav = () => {
 
 
     return (
-        <div className='lg:h-0 darl:text-white'>
+        <div className='lg:h-0 dark:text-white'>
             <nav className='flex justify-between z-50 relative h-full items-center lg:hidden md:px-10'>
                 <div className='w-full md:w-auto px-4 py-5 flex justify-between items-center'>
-                    <h1 className='text-xl font-bold'>LOGO</h1>
+                    <img src={logo} alt="" className='h-16 w-40' />
                     <div onClick={() => setOpen(!open)} className='text-2xl md:hidden cursor-pointer'>
                         {open ? <IoClose /> : <GiHamburgerMenu />}
                     </div>
@@ -45,7 +46,7 @@ const Nav = () => {
 
 
                 {/* mobile Nav */}
-                <ul className={`md:hidden py-10 bg-gray-700 absolute text-white w-full h-screen space-y-5 bottom-0 top-16 left-0 pl-4
+                <ul className={`md:hidden py-10 bg-gray-700 absolute text-white w-full h-screen space-y-5 bottom-0 top-20 left-0 pl-4
                 duration-700 ${open ? 'left-0' : 'left-[-100%]'}
                 `}>
                     <Navlinks />

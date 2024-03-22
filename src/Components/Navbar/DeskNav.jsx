@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { FaAngleDown } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
-import logo from '../../assets/WhatsApp Image 2024-03-15 at 02.20.45.jpeg'
+import logo from '../../assets/WhatsApp_Image_2024-03-15_at_02.20.45_1_-removebg-preview.png'
+import logoDark from '../../assets/dark.png'
 import { MyContext } from '../../Auth/AuthProvide';
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
@@ -86,7 +87,11 @@ const DeskNav = () => {
         <nav className='hidden lg:block px-20 py-10 dark:text-white'>
             <div className='flex justify-between items-center text-xl pb-8'>
                 <ul className='flex justify-between items-center gap-8'>
-                    <img src={logo} alt="" className='h-16 w-40' />
+                    {
+                        darkMode ? <img src={logoDark} alt="" className='h-16 w-40' />
+                            : <img src={logo} alt="" className='h-16 w-40' />
+
+                    }
                     {
                         menuItem && menuItem.map((nav, index) =>
                             <Link key={index} to={`/extra/${nav.nav}`} className="nav-item cursor-pointer">{nav.nav}</Link>
