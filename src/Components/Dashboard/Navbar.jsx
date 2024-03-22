@@ -30,7 +30,7 @@ const Navbar = () => {
     const userPhotoUrl = user?.reloadUserInfo?.photoUrl || `http://localhost:8000/image/${loginUser?.image}`;
 
     return (
-        <nav className="bg-[#21295c] p-7 flex justify-between items-center pr-10">
+        <nav className="bg-[#21295c] flex justify-between h-[80px] w-full items-center pr-10 px-10 text-2xl">
             {/* Left side */}
             <div className="flex items-center gap-5">
                 {
@@ -57,10 +57,10 @@ const Navbar = () => {
             <div className="flex items-center justify-end gap-5">
                 {/* Notification icon */}
                 <button className="text-[#b9a683] mr-4 focus:outline-none">
-                <MdOutlineDarkMode className='text-3xl text-[#ddd5c7]'/>
+                    <MdOutlineDarkMode className='text-3xl text-[#ddd5c7]' />
 
                 </button>
-                <IoSettings className='text-3xl text-[#ddd5c7]'/>
+                <IoSettings className='text-3xl text-[#ddd5c7]' />
 
                 {
                     (user || loginUser) ? <div onClick={logOutUser} className='flex justify-center items-center gap-3'>

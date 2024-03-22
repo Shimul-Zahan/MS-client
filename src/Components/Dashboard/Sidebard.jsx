@@ -166,7 +166,7 @@ const Sidebard = () => {
             </div>
             {/* heres dashboard outlets */}
             <div className='w-full'>
-                <div className='w-full h-20'>
+                <div className=''>
                     <Navbar />
                 </div>
                 <Outlet />
