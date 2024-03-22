@@ -14,8 +14,8 @@ import Registration from './Components/AuthForm/Registration.jsx'
 import OTPs from './Components/AuthForm/OTPs.jsx'
 import Sidebard from './Components/Dashboard/Sidebard.jsx'
 import AuthProvider from './Auth/AuthProvide.jsx'
-import SamplePage from './Components/Dashboard/SamplePage.jsx'
 import Support from './Pages/Home/Support.jsx'
+import Dashboard from './Components/Dashboard/Dashboard.jsx'
 
 
 const router = createBrowserRouter([
@@ -56,11 +56,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard',
-        element: <SamplePage />
+        element: <Dashboard/>
       },
       {
         path: '/dashboard/route',
-        element: <SamplePage />
+        element: <Dashboard/>
       },
 
     ]

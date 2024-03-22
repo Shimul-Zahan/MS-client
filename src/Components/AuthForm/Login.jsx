@@ -41,9 +41,9 @@ const Login = () => {
 
     return (
         <div className='w-full min-h-screen flex justify-center items-center bg-blue-950'>
-            <div className="max-w-[800px] mx-auto my-12 bg-[#353d72] shadow-md sm:px-8 sm:py-10 lg:px-16 lg:py-24 rounded-md">
+            <div className="max-w-[900px] mx-auto my-12 px-6 py-8 bg-[#353d72] shadow-md sm:px-8 sm:py-10 lg:px-16 lg:py-24 rounded-md">
                 <div className="flex flex-col sm:flex-row justify-between space-x-0 sm:space-x-12">
-                    <div className="w-full sm:w-2/3 mb-8 sm:mb-0">
+                    <div className="w-full sm:w-1/2 mb-8 sm:mb-0">
                         {/* Left side form */}
                         <h2 className="text-4xl font-bold mb-6 text-white">Login</h2>
                         <form onSubmit={handleSubmit}>
