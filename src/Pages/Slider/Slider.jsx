@@ -93,14 +93,14 @@ const Sliders = () => {
             <Slide index={0}>
               <Image src="https://i.ibb.co/0D6WvYw/Highlight-Surface-Laptop-5-Refresh-Test-VP5-1920x600.jpg" />
               <div className="slide-text ">
-                <h2 className="text-7xl font-medium lg:mb-8 text-black">
+                <h2 className="lg:text-7xl font-medium lg:mb-8 text-black">
                   Save up to $610 on Surface <br /> Laptop 5
                 </h2>
-                <p className="text-2xl font-medium text-black mb-9">
+                <p className="lg:text-2xl font-medium text-black mb-9">
                   Sophisticated style and multitasking speed powered by 12th Gen{" "}
                   <br /> Intel® Core. Offer ends 3/21.{" "}
                 </p>
-                <Link to="/" className=" bg-blue-800 p-3 text-white text-3xl">
+                <Link to="/" className=" bg-blue-800 p-3 text-white lg:text-3xl">
                   Shop Surface Laptop 5
                 </Link>
               </div>
@@ -108,20 +108,20 @@ const Sliders = () => {
             <Slide index={1}>
               <Image src="https://i.ibb.co/HBLT3Qb/d.jpg" />
               <div className="slide-text ">
-                <h2 className="text-7xl font-medium lg:mb-8 text-black">
+                <h2 className="lg:text-7xl font-medium lg:mb-8 text-black">
                   Unlock your potential with <br /> Microsoft Copilot{" "}
                 </h2>
-                <p className="text-2xl font-medium text-black mb-9">
+                <p className="lg:text-2xl font-medium text-black mb-9">
                   Get things done faster and unleash your creativity with the
                   power <br /> of AI anywhere you go.{" "}
                 </p>
-                <Link to="/" className=" bg-blue-800 p-3 text-white text-3xl">
+                <Link to="/" className=" bg-blue-800 p-3 text-white lg:text-3xl">
                   Download the Copiolot app
                 </Link>
               </div>
             </Slide>
           </Slider>
-          <div className="flex justify-center items-center gap-5 mt-10">
+          <div className="flex justify-center items-center gap-5 mt-10 dark:text-white">
             {/* <ButtonPlay childrenPlaying="Pause" childrenPaused="Play" /> */}
             <ButtonPlay
               childrenPlaying={<MdOutlinePauseCircle size="2.7em" />}

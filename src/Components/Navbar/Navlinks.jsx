@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { MyContext } from '../../Auth/AuthProvide';
+import { Link } from 'react-router-dom';
 
 const Navlinks = () => {
 
@@ -8,39 +9,27 @@ const Navlinks = () => {
 
     const menuItem = [
         {
-            nav: 'home',
+            nav: 'Clienteer Hub',
             link: '/',
-            submenu: true,
-            submenuItem: [
-                { name: 'Apple', link: '/apple' },
-                { name: 'Komla', link: '/apple' },
-                { name: 'Kola', link: '/apple' },
-                { name: 'Pineapple', link: '/apple' },
-                { name: 'Guava', link: '/apple' }
-            ]
         },
         {
-            nav: 'about',
+            nav: 'Pulse Flow',
             link: '/about'
         },
         {
-            nav: 'contact',
+            nav: 'Sales Spark',
             link: '/contact',
-            submenu: true,
-            submenuItem: [
-                { name: 'Apple', link: '/apple' },
-                { name: 'Komla', link: '/apple' },
-                { name: 'Kola', link: '/apple' },
-                { name: 'Pineapple', link: '/apple' },
-                { name: 'Guava', link: '/apple' }
-            ]
         },
         {
-            nav: 'login',
+            nav: 'Finance Forte',
             link: '/login',
         },
         {
-            nav: 'registration',
+            nav: 'Support',
+            link: '/login',
+        },
+        {
+            nav: 'All Microsoft',
             link: '/registration',
             submenu: true,
             submenuItem: [
@@ -50,7 +39,7 @@ const Navlinks = () => {
                 { name: 'Pineapple', link: '/apple' },
                 { name: 'Guava', link: '/apple' }
             ]
-        }
+        },
     ]
 
     return (
@@ -60,8 +49,10 @@ const Navlinks = () => {
                     <div>
                         <div className='group cursor-pointer'>
                             <li onClick={() => heading !== item.nav ? setHeading(item.nav) : setHeading('')}
-                                className='flex justify-between md:justify-center items-center gap-1 pr-4'>
-                                {item.nav} {item.submenu && <RiArrowDropDownLine className='text-xl' />}
+                                className='flex justify-between md:justify-center items-center gap-5 py-2 text-xl pr-4'>
+                                <Link to={item.link}>
+                                    {item.nav}
+                                </Link> {item.submenu && <RiArrowDropDownLine className='text-xl' />}
                             </li>
                         </div>
                         <div>
@@ -69,7 +60,7 @@ const Navlinks = () => {
                             <div className={` pt-2 ${heading === item.nav ? 'md:hidden' : 'hidden'} `}>
                                 {
                                     item.submenu && (
-                                        <div>
+                                        <div className='space-y-4 text-lg px-5'>
                                             {
                                                 item?.submenuItem.map(subMenuItem =>
                                                     <li>{subMenuItem.name}</li>

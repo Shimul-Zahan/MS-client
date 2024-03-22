@@ -64,7 +64,7 @@ const Categories = () => {
 
     ]
 
- // const menus = [
+    // const menus = [
 
     //     {
 
@@ -133,7 +133,7 @@ const Categories = () => {
 
                             <img src={menu.image} alt="cat-image" className='h-20 w-20 bg-white' />
 
-                            <h1 className='font-bold underline text-blue-700'>{menu.title}</h1>
+                            <h1 className='font-bold underline dark:text-white text-blue-700'>{menu.title}</h1>
 
                         </Link>
 
