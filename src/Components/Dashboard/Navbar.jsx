@@ -3,10 +3,15 @@ import { MyContext } from '../../Auth/AuthProvide';
 import { Link } from 'react-router-dom';
 import { VscAccount } from 'react-icons/vsc';
 import { toast } from 'react-toastify';
+import { FaCircleChevronLeft } from "react-icons/fa6";
+import { FaChevronCircleRight } from "react-icons/fa";
 
 const Navbar = () => {
 
-    const { user, logOut } = useContext(MyContext);
+    // setIsSidebarOpen,
+    // isSidebarOpen,
+
+    const { user, logOut, setIsSidebarOpen, isSidebarOpen } = useContext(MyContext);
 
     const logOutUser = () => {
         logOut().then(res => {
@@ -21,15 +26,16 @@ const Navbar = () => {
 
     const userManual = localStorage.getItem("ms_userInfo");
     const loginUser = JSON.parse(userManual);
-    console.log(loginUser);
-    console.log(user);
-
     const userPhotoUrl = user?.reloadUserInfo?.photoUrl || `http://localhost:8000/image/${loginUser?.image}`;
 
     return (
         <nav className="bg-[#21295c] p-4 flex justify-between items-center pr-10">
             {/* Left side */}
-            <div className="flex items-center">
+            <div className="flex items-center gap-5">
+                {
+                    isSidebarOpen ? <FaChevronCircleRight onClick={() => setIsSidebarOpen(!isSidebarOpen)} className='text-3xl text-white cursor-pointer' /> :
+                        <FaCircleChevronLeft onClick={() => setIsSidebarOpen(!isSidebarOpen)} className='text-3xl text-white cursor-pointer' />
+                }
                 <div className="mr-4 relative">
                     {/* Search bar */}
                     <input
@@ -44,7 +50,6 @@ const Navbar = () => {
                     </div>
 
                 </div>
-                {/* You can add additional items to the left side if needed */}
             </div>
 
             {/* Right side */}

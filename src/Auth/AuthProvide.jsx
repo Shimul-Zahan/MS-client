@@ -40,11 +40,20 @@ const AuthProvider = ({ children }) => {
         })
     }, [])
 
+    // sidebar works here
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
     const contenxtProperty = {
         user,
         loading,
         googleLogin,
         logOut,
+        setIsSidebarOpen,
+        isSidebarOpen,
     }
 
     return (
