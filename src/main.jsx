@@ -16,6 +16,7 @@ import Sidebard from './Components/Dashboard/Sidebard.jsx'
 import AuthProvider from './Auth/AuthProvide.jsx'
 import Support from './Pages/Home/Support.jsx'
 import Dashboard from './Components/Dashboard/Dashboard.jsx'
+import Users from './Components/Dashboard/AllPages/Users.jsx'
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/route',
         element: <Dashboard />
+      },
+      {
+        path: '/dashboard/user',
+        element: <Users />
       },
 
     ]

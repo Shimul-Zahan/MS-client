@@ -21,8 +21,8 @@ const Sidebard = () => {
     const { isSidebarOpen } = useContext(MyContext);
 
     return (
-        <section className='flex justify-start items-start'>
-            <div className={`${isSidebarOpen ? 'w-0 duration-500' : 'w-96 duration-500'} flex min-h-screen bg-[#21295c] flex-col justify-between border-e`}>
+        <section className='flex justify-start items-start w-full'>
+            <div className={`${isSidebarOpen ? 'w-0 duration-500' : 'w-96 duration-500'} flex h-screen overflow-y-scroll bg-[#21295c] flex-col justify-between border-e`}>
                 <div className="py-6">
                     <img src={logo} alt="" className='h-24 w-full rounded-lg' />
                     <div className='mt-3'>
@@ -123,6 +123,15 @@ const Sidebard = () => {
                     <div className='mt-6'>
                         <h1 className="px-12 mt-10 text-2xl text-[#b9a683] mb-5 ">Management</h1>
                         <ul className="space-y-1 px-5">
+                            <NavLink to='/dashboard/user' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
+                                <div className='flex justify-start items-center gap-3'>
+                                    <FaUsers className='text-2xl' />
+                                    <h1 className='text-2xl'>Users</h1>
+                                </div>
+                                <div className='pr- text-[#21295c]'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                </div>
+                            </NavLink>
                             <NavLink to='/dashboard/admin' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
                                 <div className='flex justify-start items-center gap-3'>
                                     <MdAdminPanelSettings className='text-2xl' />
@@ -145,7 +154,7 @@ const Sidebard = () => {
                         </ul>
                     </div>
                 </div>
-                <div class="sticky inset-x-0 bottom-0 flex justify-between items-center pr-4 border-t border-gray-100 text-[#b9a683] ">
+                <div class="sticky inset-x-0 bottom-0 z-50 flex justify-between bg-[#21295c] items-center pr-4 border-t border-gray-100 text-[#b9a683] ">
                     <a href="#" class="flex items-center gap-2 p-4">
                         <img
                             alt=""
@@ -165,7 +174,7 @@ const Sidebard = () => {
                 </div>
             </div>
             {/* heres dashboard outlets */}
-            <div className='w-full'>
+            <div className="w-full overflow-x-scroll">
                 <div className=''>
                     <Navbar />
                 </div>

@@ -54,7 +54,7 @@ const Navbar = () => {
             </div>
 
             {/* Right side */}
-            <div className="flex items-center justify-end gap-5">
+            <div className="lg:flex items-center justify-end gap-5 hidden">
                 {/* Notification icon */}
                 <button className="text-[#b9a683] mr-4 focus:outline-none">
                     <MdOutlineDarkMode className='text-3xl text-[#ddd5c7]' />

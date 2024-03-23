@@ -13,7 +13,7 @@ import { CiLight } from "react-icons/ci";
 const DeskNav = () => {
 
     const [toggle, setToggle] = useState(false);
-    const { user, logOut } = useContext(MyContext);
+    const { user, logOut, setDarkMode, darkMode } = useContext(MyContext);
 
     const logOutUser = () => {
         logOut().then(res => {
@@ -53,31 +53,16 @@ const DeskNav = () => {
         },
     ]
 
-    // for darkmode here
-    const [darkMode, setDarkMode] = useState(() => {
-        const storedPreference = localStorage.getItem('darkMode');
-        return storedPreference ? JSON.parse(storedPreference) : false;
-    });
 
-    useEffect(() => {
-        const htmlElement = document.documentElement;
-        if (darkMode) {
-            htmlElement.classList.add('dark');
-        } else {
-            htmlElement.classList.remove('dark');
-        }
-        localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    }, [darkMode]);
 
-    console.log(darkMode);
 
     return (
         <nav className='hidden lg:block px-20 py-10 dark:text-white'>
             <div className='flex justify-between items-center text-xl pb-8'>
                 <ul className='flex justify-between items-center gap-8'>
                     {
-                        darkMode ? <img src={logoDark} alt="" className='h-16 w-40' />
-                            : <img src={logo} alt="" className='h-16 w-40' />
+                        darkMode ? <img src={logoDark} alt="" className='h-20 w-48' />
+                            : <img src={logo} alt="" className='h-20 w-48' />
 
                     }
                     {

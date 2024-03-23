@@ -5,6 +5,8 @@ import SupportNav from "./SupportNav";
 import emailjs from '@emailjs/browser';
 import Footer from "../../Components/Footer/Footer";
 import background from "../../assets/background.webp"
+import DeskNav from "../../Components/Navbar/DeskNav";
+import Nav from "../../Components/Navbar/Nav";
 const Support = () => {
 
     const form = useRef();
@@ -40,12 +42,18 @@ const Support = () => {
 
 
     return (
-        <div className="dark:bg-gray-700 dark:text-white">
+        <div className="dark:bg-gray-700 dark:text-white w-full">
             <div
-                className="hero min-h-80"
+                className="hero min-h-80 w-full"
             >
-                <SupportNav />
-                <div className="pt-24 pb-14 z-10">
+                {/* <SupportNav /> */}
+                <div className="w-full absolute top-0 hidden lg:block">
+                    <DeskNav />
+                </div>
+                <div className="w-full absolute top-0 block lg:hidden">
+                    <Nav />
+                </div>
+                <div className="pt-40 pb-14 z-10">
                     <h2 className="md:text-[50px] font-bold text-white text-center">
                         How can we help?
                     </h2>
@@ -119,11 +127,11 @@ const Support = () => {
                         </form>
                     </div>
 
-                    {/* Google Map  */}
+                    {/* Google Map for Toronto, Canada */}
                     <div className="relative h-full max-md:min-h-[350px]">
-                        <iframe src="https://maps.google.com/maps?q=Dhaka&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        <iframe src="https://maps.google.com/maps?q=Toronto,%20Canada&t=&z=13&ie=UTF8&iwloc=&output=embed"
                             className="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
-                            allowfullscreen></iframe>
+                            allowFullScreen></iframe>
                     </div>
 
                 </div>

@@ -14,7 +14,7 @@ const Home = () => {
     const { loading } = useContext(MyContext);
 
     if (loading) {
-        return <div className='w-full h-screen flex justify-center items-center'>
+        return <div className='w-full h-screen bg-gray-700 flex justify-center items-center'>
             <ScaleLoader color="#0000FF" />
         </div>
     }
