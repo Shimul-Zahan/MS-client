@@ -54,10 +54,10 @@ const Support = () => {
                     <Nav />
                 </div>
                 <div className="pt-40 pb-14 z-10">
-                    <h2 className="md:text-[50px] font-bold text-white text-center">
+                    <h2 className="md:text-[50px] font-bold text-black dark:text-white text-center">
                         How can we help?
                     </h2>
-                    <p className="text-white text-center">
+                    <p className="text-black dark:text-white text-center">
                         <Link to="/" className="text-3xl font-semibold cursor-pointer">
                             Send us a message!
                         </Link>

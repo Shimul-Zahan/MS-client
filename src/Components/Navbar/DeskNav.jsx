@@ -60,11 +60,13 @@ const DeskNav = () => {
         <nav className='hidden lg:block px-20 py-10 dark:text-white'>
             <div className='flex justify-between items-center text-xl pb-8'>
                 <ul className='flex justify-between items-center gap-8'>
-                    {
-                        darkMode ? <img src={logoDark} alt="" className='h-20 w-48' />
-                            : <img src={logo} alt="" className='h-20 w-48' />
+                    <Link to='/'>
+                        {
+                            darkMode ? <img src={logoDark} alt="" className='h-24 w-52' />
+                                : <img src={logo} alt="" className='h-24 w-52' />
 
-                    }
+                        }
+                    </Link>
                     {
                         menuItem && menuItem.map((nav, index) =>
                             <Link key={index} to={`${nav.nav}`} className="nav-item cursor-pointer">{nav.nav}</Link>

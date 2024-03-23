@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
-import logo from '../../assets/WhatsApp Image 2024-03-15 at 02.20.45.jpeg'
+import logo from '../../assets/WhatsApp_Image_2024-03-15_at_02.20.45_1_-removebg-preview.png'
+import logoDark from '../../assets/dark.png'
 import { MyContext } from '../../Auth/AuthProvide'
 import { MdHomeFilled } from "react-icons/md";
 import './sidebar.css'
@@ -18,13 +19,15 @@ import { IoSettings } from 'react-icons/io5'
 
 const Sidebard = () => {
 
-    const { isSidebarOpen } = useContext(MyContext);
+    const { isSidebarOpen, darkMode } = useContext(MyContext);
 
     return (
         <section className='flex justify-start items-start w-full'>
             <div className={`${isSidebarOpen ? 'w-0 duration-500' : 'w-96 duration-500'} flex h-screen overflow-y-scroll bg-[#21295c] flex-col justify-between border-e`}>
                 <div className="py-6">
-                    <img src={logo} alt="" className='h-24 w-full rounded-lg' />
+                    <Link to='/'>
+                        <img src={logoDark} alt="" className='h-24 w-full' />
+                    </Link>
                     <div className='mt-3'>
                         <NavLink to='/dashboard' className='flex justify-between items-center text-[#b9a683] hover:bg-[#b9a683] hover:text-black p-5'>
                             <div className='flex justify-start items-center gap-3'>

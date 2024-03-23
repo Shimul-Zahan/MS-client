@@ -6,12 +6,15 @@ import { MyContext } from '../../Auth/AuthProvide';
 import { Link } from 'react-router-dom';
 import { VscAccount } from 'react-icons/vsc';
 import logo from '../../assets/WhatsApp_Image_2024-03-15_at_02.20.45_1_-removebg-preview.png'
+import logoDark from '../../assets/dark.png'
+import { CiLight } from 'react-icons/ci';
+import { MdDarkMode } from 'react-icons/md';
 
 const Nav = () => {
 
     const [open, setOpen] = useState(false);
 
-    const { user, logOut } = useContext(MyContext);
+    const { user, logOut, setDarkMode, darkMode } = useContext(MyContext);
 
     const logOutUser = () => {
         logOut().then(res => {
@@ -32,7 +35,13 @@ const Nav = () => {
         <div className='lg:h-0 dark:text-white'>
             <nav className='flex justify-between z-50 relative h-full items-center lg:hidden md:px-10'>
                 <div className='w-full md:w-auto px-4 py-5 flex justify-between items-center'>
-                    <img src={logo} alt="" className='h-16 w-40' />
+                    <Link to='/'>
+                        {
+                            darkMode ? <img src={logoDark} alt="" className='h-20 w-48' />
+                                : <img src={logo} alt="" className='h-20 w-48' />
+
+                        }
+                    </Link>
                     <div onClick={() => setOpen(!open)} className='text-2xl md:hidden cursor-pointer'>
                         {open ? <IoClose /> : <GiHamburgerMenu />}
                     </div>
@@ -64,6 +73,17 @@ const Nav = () => {
                         </div>
 
                     </div>
+                    <button
+                        className="text-3xl text-black dark:text-white px-4 py-2 rounded"
+                        onClick={() => setDarkMode(!darkMode)}
+                    >
+                        {darkMode ? <CiLight /> : <MdDarkMode />}
+                    </button>
+                    {
+                        (user || loginUser) && <div className='flex cursor-pointer justify-start items-center gap-3'>
+                            <Link to='/dashboard' className='cursor-pointer nav-item'>Dashboard</Link>
+                        </div>
+                    }
                     {
                         (user || loginUser) ? <div onClick={logOutUser} className='flex justify-start items-center gap-3'>
                             <Link to="/registration" className='cursor-pointer nav-item'>Logout</Link>
