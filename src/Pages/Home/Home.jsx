@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Nav from '../../Components/Navbar/Nav'
 import Footer from '../../Components/Footer/Footer'
 import DeskNav from '../../Components/Navbar/DeskNav'
@@ -6,8 +6,19 @@ import Slider from '../Slider/Slider'
 import Banner from '../Banner/Banner'
 import Card from '../../Components/Card/Card'
 import Categories from '../../Components/Categories.jsx/Categories'
+import { MyContext } from '../../Auth/AuthProvide'
+import { ScaleLoader } from 'react-spinners'
 
 const Home = () => {
+
+    const { loading } = useContext(MyContext);
+
+    if (loading) {
+        return <div className='w-full h-screen flex justify-center items-center'>
+            <ScaleLoader color="#0000FF" />
+        </div>
+    }
+
     return (
         <>
             <div className='min-h-screen dark:bg-gray-700'>
@@ -23,7 +34,7 @@ const Home = () => {
                 </div>
                 <Banner />
                 <div className='px-10 py-10'>
-                    <h1 className='text-4xl font-bold mb-7'>For business</h1>
+                    <h1 className='text-4xl font-bold mb-7 dark:text-white'>For business</h1>
                     <div className='grid grid-cols-1 lg:grid-cols-4 justify-center items-center gap-8 w-full'>
                         <Card path={''} image={"https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-5-LIfestyle-M2?wid=380&hei=213&fit=crop"} />
                         <Card path={''} image={"https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Commercial?wid=380&hei=213&fit=crop"} />

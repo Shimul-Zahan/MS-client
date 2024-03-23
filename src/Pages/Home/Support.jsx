@@ -40,7 +40,7 @@ const Support = () => {
 
 
     return (
-        <div>
+        <div className="dark:bg-gray-700 dark:text-white">
             <div
                 className="hero min-h-80"
             >

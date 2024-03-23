@@ -14,23 +14,23 @@ const Navlinks = () => {
         },
         {
             nav: 'Pulse Flow',
-            link: '/about'
+            link: '/'
         },
         {
             nav: 'Sales Spark',
-            link: '/contact',
+            link: '/',
         },
         {
             nav: 'Finance Forte',
-            link: '/login',
+            link: '/',
         },
         {
             nav: 'Support',
-            link: '/login',
+            link: '/support',
         },
         {
             nav: 'All Microsoft',
-            link: '/registration',
+            link: '/',
             submenu: true,
             submenuItem: [
                 { name: 'Apple', link: '/apple' },

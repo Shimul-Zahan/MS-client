@@ -37,31 +37,19 @@ const DeskNav = () => {
         },
         {
             nav: 'Pulse Flow',
-            link: '/about'
+            link: '/'
         },
         {
             nav: 'Sales Spark',
-            link: '/contact',
+            link: '/',
         },
         {
             nav: 'Finance Forte',
-            link: '/login',
+            link: '',
         },
         {
             nav: 'Support',
-            link: '/login',
-        },
-        {
-            nav: 'All Microsoft',
-            link: '/registration',
-            submenu: true,
-            submenuItem: [
-                { name: 'Apple', link: '/apple' },
-                { name: 'Komla', link: '/apple' },
-                { name: 'Kola', link: '/apple' },
-                { name: 'Pineapple', link: '/apple' },
-                { name: 'Guava', link: '/apple' }
-            ]
+            link: '/',
         },
     ]
 
@@ -94,7 +82,7 @@ const DeskNav = () => {
                     }
                     {
                         menuItem && menuItem.map((nav, index) =>
-                            <Link key={index} to={`/extra/${nav.nav}`} className="nav-item cursor-pointer">{nav.nav}</Link>
+                            <Link key={index} to={`${nav.nav}`} className="nav-item cursor-pointer">{nav.nav}</Link>
                         )
                     }
                 </ul>
