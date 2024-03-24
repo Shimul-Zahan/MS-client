@@ -1,21 +1,18 @@
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import SupportNav from "./SupportNav";
 import emailjs from '@emailjs/browser';
 import Footer from "../../Components/Footer/Footer";
 import background from "../../assets/background.webp"
 import DeskNav from "../../Components/Navbar/DeskNav";
 import Nav from "../../Components/Navbar/Nav";
+import { MyContext } from "../../Auth/AuthProvide";
+import { ScaleLoader } from "react-spinners";
 const Support = () => {
 
     const form = useRef();
 
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     formState: { errors },
-    // } = useForm()
     const sendEmail = (e) => {
         e.preventDefault()
         const name = e.target.user_name.value;
@@ -38,6 +35,14 @@ const Support = () => {
             window.alert("Please fill all field")
         }
 
+    }
+
+    const { loading } = useContext(MyContext);
+
+    if (loading) {
+        return <div className='w-full h-screen bg-gray-700 flex justify-center items-center'>
+            <ScaleLoader color="#0000FF" />
+        </div>
     }
 
 
