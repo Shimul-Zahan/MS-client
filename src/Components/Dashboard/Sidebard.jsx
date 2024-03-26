@@ -23,23 +23,23 @@ const Sidebard = () => {
 
     return (
         <section className='flex justify-start items-start w-full'>
-            <div className={`${isSidebarOpen ? 'w-0 duration-500' : 'w-96 duration-500'} flex h-screen overflow-y-scroll bg-[#21295c] flex-col justify-between border-e`}>
+            <div className={`${isSidebarOpen ? 'w-0 duration-500' : 'w-96 duration-500'} flex h-screen bg-[#21295c] flex-col justify-between border-e`}>
                 <div className="py-6">
-                    <Link to='/'>
-                        <img src={logoDark} alt="" className='h-24 w-full' />
+                    <Link to='/' className='flex justify-center items-center'>
+                        <img src={logoDark} alt="" className='h-24 w-52' />
                     </Link>
-                    <div className='mt-3'>
+                    <div className='mt-2'>
                         <NavLink to='/dashboard' className='flex justify-between items-center text-[#b9a683] hover:bg-[#b9a683] hover:text-black p-5'>
                             <div className='flex justify-start items-center gap-3'>
-                                <MdHomeFilled className='text-3xl' />
+                                <MdHomeFilled className='text-2xl' />
                                 <h1 className='text-2xl'>DASHBOARD</h1>
                             </div>
                             <div className='pr- text-[#21295c]'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                             </div>
                         </NavLink>
                         <div>
-                            <h1 className='px-12 mt-10 text-2xl text-[#b9a683] mb-5'>Client Facing</h1>
+                            <h1 className='px-12 mt-5 text-2xl text-[#b9a683] mb-5'>Client Facing</h1>
                         </div>
                         <ul className="space-y-1 px-5">
                             <NavLink to='/dashboard/products' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -48,7 +48,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Products</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                             <NavLink to='/dashboard/customer' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -57,7 +57,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Customers</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                             <NavLink to='/dashboard/transactions' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -66,7 +66,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Transactions</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                             <NavLink to='/dashboard/geography' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -75,7 +75,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Geography</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                         </ul>
@@ -83,7 +83,7 @@ const Sidebard = () => {
 
                     {/* navlinks */}
                     <div className='mt-6'>
-                        <h1 className="px-12 mt-10 text-2xl text-[#b9a683] mb-5 ">Sales</h1>
+                        <h1 className="px-12 mt-5 text-2xl text-[#b9a683] mb-5 ">Sales</h1>
                         <ul className="space-y-1 px-5">
                             <NavLink to='/dashboard/overview' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
                                 <div className='flex justify-start items-center gap-3'>
@@ -91,7 +91,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Overview</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                             <NavLink to='/dashboard/daily' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -100,7 +100,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Daily</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                             <NavLink to='/dashboard/monthly' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -109,7 +109,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Monthly</h1>
                                 </div>
                                 <div className=' text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                             <NavLink to='/dashboard/breakdown' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -118,13 +118,13 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Breakdown</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                         </ul>
                     </div>
                     <div className='mt-6'>
-                        <h1 className="px-12 mt-10 text-2xl text-[#b9a683] mb-5 ">Management</h1>
+                        <h1 className="px-12 mt-5 text-2xl text-[#b9a683] mb-5 ">Management</h1>
                         <ul className="space-y-1 px-5">
                             <NavLink to='/dashboard/user' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
                                 <div className='flex justify-start items-center gap-3'>
@@ -132,7 +132,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Users</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                             <NavLink to='/dashboard/admin' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -141,7 +141,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Admin</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
                             <NavLink to='/dashboard/performance' className='flex justify-between items-center text-[#ddd5c7] hover:bg-[#b9a683] hover:text-black px-5 py-2'>
@@ -150,7 +150,7 @@ const Sidebard = () => {
                                     <h1 className='text-2xl'>Performance</h1>
                                 </div>
                                 <div className='pr- text-[#21295c]'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="24px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="20px" viewBox="0 0 28 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="m10 17l5-5-5-5" /></svg>
                                 </div>
                             </NavLink>
 

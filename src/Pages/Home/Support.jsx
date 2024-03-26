@@ -34,7 +34,6 @@ const Support = () => {
         } else {
             window.alert("Please fill all field")
         }
-
     }
 
     const { loading } = useContext(MyContext);

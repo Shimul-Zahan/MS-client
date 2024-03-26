@@ -6,7 +6,7 @@ const Card = ({ image, size, path }) => {
         <Link to={path}>
             <div className={`min-w-[300px] relative bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between`}>
                 <a href="#">
-                    <img className="h-full w-full" src={image} alt="" />
+                    <img className="h-[230px] w-full" src={image} alt="" />
                 </a>
                 <div className="p-5">
                     <a href="#">

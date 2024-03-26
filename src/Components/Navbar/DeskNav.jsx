@@ -86,7 +86,7 @@ const DeskNav = () => {
                         </div>
                     }
                     <div onClick={() => setToggle(!toggle)} className='flex cursor-pointer justify-center items-center gap-3'>
-                        <li className='cursor-pointer nav-item'>All Microsoft</li>
+                        <li className='cursor-pointer nav-item'>All Groundnet</li>
                         <FaAngleDown />
                     </div>
                     <div className='flex justify-center items-center gap-3'>

@@ -19,6 +19,11 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { GoDot, GoDotFill } from "react-icons/go";
 import { Link } from "react-router-dom";
+// images here
+import banner1 from '../../assets/banner/01.jpg'
+import banner2 from '../../assets/banner/02.jpg'
+
+
 const Sliders = () => {
   const [slide, setSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -91,12 +96,12 @@ const Sliders = () => {
         >
           <Slider className="slider">
             <Slide index={0}>
-              <Image src="https://i.ibb.co/0D6WvYw/Highlight-Surface-Laptop-5-Refresh-Test-VP5-1920x600.jpg" />
+              <Image src={banner1} />
               <div className="slide-text ">
-                <h2 className="lg:text-7xl font-medium lg:mb-8 text-black">
+                <h2 className="lg:text-7xl font-medium lg:mb-8 text-white">
                   Save up to $610 on Surface <br /> Laptop 5
                 </h2>
-                <p className="lg:text-2xl font-medium text-black mb-9">
+                <p className="lg:text-2xl font-medium text-white mb-9">
                   Sophisticated style and multitasking speed powered by 12th Gen{" "}
                   <br /> Intel® Core. Offer ends 3/21.{" "}
                 </p>
@@ -106,12 +111,12 @@ const Sliders = () => {
               </div>
             </Slide>
             <Slide index={1}>
-              <Image src="https://i.ibb.co/HBLT3Qb/d.jpg" />
+              <Image src={banner2} />
               <div className="slide-text ">
-                <h2 className="lg:text-7xl font-medium lg:mb-8 text-black">
+                <h2 className="lg:text-7xl font-medium lg:mb-8 text-white">
                   Unlock your potential with <br /> Microsoft Copilot{" "}
                 </h2>
-                <p className="lg:text-2xl font-medium text-black mb-9">
+                <p className="lg:text-2xl font-medium text-white mb-9">
                   Get things done faster and unleash your creativity with the
                   power <br /> of AI anywhere you go.{" "}
                 </p>
